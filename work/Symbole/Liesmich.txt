@@ -1,0 +1,40 @@
+﻿HomeCheck – WLAN-Atlas mit Material Design Icons
+Stand: 19.11.2026
+
+Start: HomeCheck-Atlas-Streckengrafik.exe (portable Windows-Anwendung).
+.NET Framework 4.5 oder neuer; keine zusätzliche Symbolinstallation nötig.
+
+Netz erfassen, rechts ein Gerät auswählen, im Tab Übersicht auf „Symbol ändern …“ klicken.
+36 Symbole, nach Kategorien gegliedert; Suche nach deutschen Namen oder Begriffen.
+„Übernehmen“ speichert eine manuelle Auswahl. „Automatisch erkennen“ entfernt sie.
+Die Symbolwahl ändert nur die Darstellung, weder Gerätetyp noch Netzwerkkonfiguration.
+
+Die automatische Wahl nutzt Modell, Geräteklasse und Namen als Hinweise und kann irren.
+Manuelle Auswahl gilt in Karte und Geräteliste; inaktive Geräte bleiben ausgegraut.
+Zuordnungen werden pro Netzwerk lokal unter %LOCALAPPDATA%\HomeCheck\Symbole gespeichert.
+MAC-Adresse, AIN oder Mesh-Kennung dienen zur Zuordnung; eine neue DHCP-Adresse oder ein
+neuer Name allein ändert sie nicht. Bei fehlender oder mehrdeutiger Kennung bleibt die
+manuelle Auswahl gesperrt. Bei wechselnder MAC-Adresse kann eine neue Auswahl nötig sein.
+Die übrigen Einstellungen und Aufzeichnungen werden weiterverwendet.
+
+Symbole: Material Design Icons 7.4.47, Pictogrammers.
+Quelle: https://github.com/Templarian/MaterialDesign-Webfont/tree/v7.4.47
+Die verwendeten Glyphen wurden als transparente PNGs gerastert und in die EXE eingebettet.
+Lizenz: Apache 2.0; Lizenztexte liegen unter Lizenzen und als Ressourcen in der EXE.
+
+Quellcode und Buildskript: Quellcode\build.ps1
+Der Build verwendet den vorhandenen .NET-Framework-C#-Compiler.
+Die Python-Skripte dienen nur zum erneuten Erzeugen der Grafiken (Pillow erforderlich).
+Die EXE benötigt kein Python und greift zur Symbolanzeige nicht aufs Internet zu.
+Validierung: 44 Prüfungen erfolgreich (Ressourcen, Speicherung, DHCP-Wechsel,
+Zurücksetzen, Smarthome-Kennung, parallele Einstellungen und Dialogaufbau).
+Darstellung zusätzlich anhand synthetischer Geräte geprüft; kein Live-Netzscan durchgeführt.
+
+Erweiterung: Grafische Strecke im Streckentest
+Gerätesymbole, Namen und Ping-Ziele ersetzen die bisherige Textkette.
+Die Stationsfarben entsprechen den Pingkurven. WLAN gestrichelt, LAN durchgezogen;
+manuelle Kabel und ungeklärte Verbindungen sind gekennzeichnet. Lange Pfade können
+horizontal verschoben werden. Der PC ist als Messquelle separat dargestellt:
+Die Topologie ist kein Traceroute und die Pings messen jeweils ab diesem PC.
+Zusätzlich 6 Prüfungen zur Streckengrafik erfolgreich, einschließlich Dialogdarstellung
+bei normaler und kleiner Fenstergröße. Keine Netzwerkabfragen für diese Tests.

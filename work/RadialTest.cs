@@ -1,0 +1,9 @@
+﻿using System;using System.Drawing;using System.Linq;using System.Windows.Forms;
+class ClickChart:Chart{public void ClickAt(int x,int y){OnMouseClick(new MouseEventArgs(MouseButtons.Left,1,x,y,0));}}
+class RadialTest{
+static double Len(Device a,Device b){return Math.Sqrt(Math.Pow(a.Pos.X-b.Pos.X,2)+Math.Pow(a.Pos.Y-b.Pos.Y,2));}
+[STAThread]static void Main(){using(var m=new ClickChart()){m.Size=new Size(2400,1600);var data=new Inventory();foreach(string name in new[]{"Router","450E","1750E","6000","Mini","A","B","C","D","E","Offline"})data.Devices.Add(new Device(name));var n=data.Devices;n[0].Role="master";for(int i=1;i<=3;i++)n[i].Role="slave";
+int[] parents={0,0,0,1,2,2,2,2,0};for(int i=0;i<parents.Length;i++)data.Links.Add(new Link(){A=n[parents[i]],B=n[i+1],Type="WLAN",Rx=i==3?-5:30});m.SetData(data);double scale=Len(n[0],n[1])/data.Links[0].Length;foreach(var l in data.Links)if(Math.Abs(Len(l.A,l.B)-scale*l.Length)>.001)throw new Exception("Länge");if(Len(n[0],n[4])<=Len(n[0],n[1]))throw new Exception("Sektor");
+Device pick=null;m.Selected=d=>{pick=d;m.SelectDevice(d);};m.ClickAt((int)n[4].Pos.X,(int)n[4].Pos.Y);m.ClickAt(1,1);if(pick!=n[4])throw new Exception("Auswahl");
+var coords=n.Select(d=>d.Pos).ToArray();data.Links.Reverse();m.SetData(data);if(!coords.SequenceEqual(n.Select(d=>d.Pos)))throw new Exception("Reihenfolge");}
+using(var f=new Atlas()){var bar=f.Controls.OfType<FlowLayoutPanel>().Single();bar.PerformLayout();var a=bar.Controls[0];var b=bar.Controls[1];if(Math.Abs(a.Top+a.Height/2-b.Top-b.Height/2)>2)throw new Exception("Ausrichtung");}Console.WriteLine("OK");}}

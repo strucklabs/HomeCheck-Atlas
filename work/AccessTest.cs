@@ -1,0 +1,1 @@
+using System;class AccessTest{[STAThread]static void Main(string[] a){if(Reader.Answer(a[0],a[1])!=a[2])throw new Exception("Hash");using(var f=new Atlas()){if(f.Text.Length==0)throw new Exception("UI");}Console.WriteLine("OK");}}

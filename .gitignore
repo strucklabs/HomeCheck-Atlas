@@ -1,0 +1,36 @@
+# Generated test programs and local test recordings
+work/**/*.exe
+work/*.exe
+work/**/*.jsonl
+work/MeshVerlaufTest.json
+**/__pycache__/
+*.pyc
+# Transfer helpers are environment tooling
+work/library_file_transfer.py
+work/Symbole/transfer-helper/
+
+# Private diagnostic recordings; keep synthetic test source files tracked.
+work/test/**/*.txt
+work/test/**/*.csv
+work/test/**/*.json
+*.jsonl
+Netzstatus.txt
+Messungen.csv
+WLAN-Verlauf.txt
+Verlauf.txt
+
+# Runtime data, credentials and local configuration must not be published.
+**/HomeCheck/Meshverlauf/
+**/HomeCheck/Symbole/
+**/HomeCheck/Verkabelung/
+.env
+.env.*
+!.env.example
+*.pfx
+*.p12
+*.key
+*.pem
+credentials.json
+secrets.json
+*.user
+*.suo

@@ -1,0 +1,15 @@
+﻿HomeCheck für Windows 10/11
+
+Start.cmd per Doppelklick starten. Bei einer ZIP-Datei zuerst alles entpacken. Für Funkprobleme den PC möglichst am selben WLAN-Zugangspunkt wie das betroffene Gerät testen. PC während der Messung eingeschaltet lassen. Das Fenster lässt sich mit Strg+C beenden. Jede fertige Runde bleibt gespeichert.
+
+Im Menü stehen Einzelmessung und Langzeitmessung zur Wahl. Bei der Frage nach dem Gerät eine IP-Adresse oder einen Hostnamen eingeben, z. B. den eigenen Home-Assistant-Server. Einen Port nur angeben, wenn dort tatsächlich ein Dienst läuft. Bei Zigbee oder Thread ist ein erreichbarer Hub oder Border-Router ein geeignetes Ziel. Die Funkverbindung zum einzelnen Sensor muss man im jeweiligen System prüfen.
+
+Ergebnisse liegen unter Dokumente\HomeCheck, ein Ordner je Lauf. Verlauf.txt enthält Hinweise je Runde. Messungen.csv enthält Zeitstempel, Ziel, Status und Gesamtdauer des Aufrufs in Millisekunden. Netzstatus.txt und WLAN-Verlauf.txt erfassen Adapter, Routen und WLAN-Ereignisse beim Start. Vor Weitergabe persönliche Netzwerknamen, Adressen und Gerätekennungen prüfen. VPNs und mehrere aktive Adapter können die gemessene Route beeinflussen. Tests laufen nacheinander vom Windows-PC aus. DNS kann aus dem lokalen Cache antworten. Ein TCP-Erfolg zeigt, dass ein Verbindungsaufbau gelang.
+
+Direktaufruf in Windows PowerShell im entpackten Ordner:
+.\HomeCheck.ps1 -Runden 240 -Pause 15 -Geraet 192.168.1.20 -Port 8123
+.\HomeCheck.ps1 -NurLokal -Geraet 192.168.1.20
+
+Standardmäßig kontaktiert HomeCheck 1.1.1.1 und 8.8.8.8 auf TCP 443 und fragt example.org über den konfigurierten Resolver ab. -NurLokal lässt diese drei Prüfungen aus. Für rein lokale Tests eine lokale IP als Geräteziel verwenden. Bei Ausfällen die Uhrzeit des beobachteten Fehlers mit Verlauf.txt abgleichen.
+
+Gezielter Fix bei DNS-Verdacht: Zuerst eine Einzelmessung speichern. Falls IP-Verbindungen funktionieren und nur Namen Probleme machen, kann ipconfig /flushdns in einer Windows-Konsole den lokalen DNS-Cache leeren. Danach dieselbe Messung wiederholen. Der Befehl betrifft nur diesen PC. HomeCheck nimmt selbst keine Netzänderungen vor.

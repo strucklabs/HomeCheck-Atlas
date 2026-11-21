@@ -1,0 +1,45 @@
+OK Selection survives DHCP, rename and reload
+OK Other instance changes preserved
+OK Automatic reset persisted
+OK Smart-home stable ID
+OK No IP-only persistence
+OK Mini-PC is not a speaker
+OK Embedded glyph router-wireless
+OK Embedded glyph router
+OK Embedded glyph access-point
+OK Embedded glyph wifi-arrow-left-right
+OK Embedded glyph switch
+OK Embedded glyph hub
+OK Embedded glyph server
+OK Embedded glyph nas
+OK Embedded glyph network-outline
+OK Embedded glyph lan
+OK Embedded glyph desktop-tower-monitor
+OK Embedded glyph laptop
+OK Embedded glyph cellphone
+OK Embedded glyph tablet
+OK Embedded glyph book-open-variant
+OK Embedded glyph printer
+OK Embedded glyph television
+OK Embedded glyph cast
+OK Embedded glyph disc-player
+OK Embedded glyph gamepad-variant
+OK Embedded glyph speaker
+OK Embedded glyph speaker-wireless
+OK Embedded glyph tablet-dashboard
+OK Embedded glyph set-top-box
+OK Embedded glyph home-automation
+OK Embedded glyph lightbulb
+OK Embedded glyph led-strip-variant
+OK Embedded glyph thermostat
+OK Embedded glyph radiator
+OK Embedded glyph phone-classic
+OK Embedded glyph robot-vacuum
+OK Embedded glyph power-socket-de
+OK Embedded glyph cctv
+OK Embedded glyph motion-sensor
+OK Embedded glyph smoke-detector
+OK Embedded glyph help-circle-outline
+OK Icon action enabled for stable identity
+OK All 36 choices visible
+44 checks passed
