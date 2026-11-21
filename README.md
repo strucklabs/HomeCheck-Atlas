@@ -65,4 +65,6 @@ Die dargestellte Topologie beruht auf gemeldeten und manuell ergänzten Verbindu
 
 Die verwendeten Material Design Icons stammen von Pictogrammers, Version 7.4.47. Die zugehörigen Lizenztexte liegen in `work/Symbole/assets/LICENSE-MDI.txt` und `work/Symbole/assets/LICENSE-Apache-2.0.txt` und sind in der aktuellen EXE eingebettet.
 
-Für den eigenen Anwendungscode wurde bisher keine separate Projektlizenz festgelegt. Die Lizenz der Symbole ist keine Lizenz für den gesamten Anwendungscode.
+Der eigene Anwendungscode und die zugehörige Projektdokumentation stehen unter der [MIT-Lizenz](LICENSE). Copyright (c) 2026 HomeCheck Contributors.
+
+Für eingebundene Drittanbieterbestandteile gelten weiterhin deren jeweilige Lizenzbedingungen. Insbesondere bleiben die oben genannten Lizenz- und Urheberhinweise der Material Design Icons erhalten. Bei der Weitergabe der Anwendung sind sowohl die MIT-Lizenz als auch die zutreffenden Drittanbieterhinweise mitzuliefern.
